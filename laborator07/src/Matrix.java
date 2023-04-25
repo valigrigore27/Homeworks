@@ -1,33 +1,37 @@
 import java.util.Arrays;
 import java.util.stream.Collectors;
-
 public class Matrix {
 
-    private final int[][] matrix;
-
+    private  int[][][] matrix;
 
     public Matrix(int n) {
-        this.matrix = new int[n][n];
+        this.matrix = new int[n][n][n];
     }
 
-
-    public void init() {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++)
-                for (int k = 0; k < matrix.length; k++) {
-                    matrix[i][j] = 0;
-                }
-        }
+    public int[][][] getMatrix() {
+        return matrix;
     }
 
+    public void putTokenInMatrix(int ord, int line, int column, int token) {
+        matrix[ord][line][column] = token;
+    }
 
-    public void putRobotsInMatrix(int ID, int x, int y) {
-        matrix[x][y] = ID;
+    public int getElementsFromMatrix(int ord, int line, int column) {
+        return matrix[ord][line][column];
+    }
+    public void  elemEqualValue(int ord, int line, int column, int value){
+        matrix[ord][line][column]=value;
     }
 
     public void print() {
-        Arrays.stream(matrix).map(row -> Arrays.stream(row).mapToObj(String::valueOf).collect(Collectors.joining("   "))).forEach(System.out::println);
+        for (int[][] layer : getMatrix()) {
+            for (int[] row : layer) {
+                System.out.println(Arrays.toString(row));
+            }
+            System.out.println();
+        }
+    }
+    public int length(){
+        return getMatrix().length;
     }
 }
-
-
