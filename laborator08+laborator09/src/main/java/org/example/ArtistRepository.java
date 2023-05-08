@@ -30,3 +30,23 @@ public class ArtistRepository {
                 .getResultList();
     }
 }
+//
+//package org.example;
+//
+//        import javax.persistence.EntityManager;
+//        import java.util.List;
+//
+//public class ArtistRepository extends AbstractRepository<Artist> {
+//
+//    public ArtistRepository(EntityManager em) {
+//        super(em);
+//    }
+//
+//    public List<Album> findAlbumsByName(String name) {
+//        return getEm().createNamedQuery("Artist.findAlbumsByName")
+//                .setParameter("name", name)
+//                .getResultList();
+//    }
+//
+//}
+
