@@ -30,3 +30,21 @@ public class GenreRepository {
                 .getResultList();
     }
 }
+//
+//package org.example;
+//
+//        import javax.persistence.EntityManager;
+//        import java.util.List;
+//
+//public class GenreRepository extends AbstractRepository<Genre> {
+//    public GenreRepository(EntityManager em) {
+//        super(em);
+//    }
+//
+//    public List<Genre> findByArtist(Artist artist) {
+//        return getEm().createNamedQuery("Album.findByArtist")
+//                .setParameter("artist", artist)
+//                .getResultList();
+//    }
+//}
+
